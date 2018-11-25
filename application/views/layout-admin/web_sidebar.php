@@ -6,22 +6,22 @@
         	<img src="<?php echo base_url() ?>assets/Photo/logo.png" class="logo-sidebar-toggle">
         </strong>
     </div>
-
+    <div class="name-side">Welcome,<br/><?php echo $this->session->userdata('name')?></div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="#">
+            <a href="<?php echo base_url().'admin/home' ?>">
                 <i class="fas fa-home"></i>
                 Home
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?php echo base_url().'admin/user' ?>">
                 <i class="fas fa-user"></i>
                 Profile
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?php echo base_url().'admin/highlight' ?>">
                 <i class="fas fa-bullhorn"></i>
                 Highlights
             </a>

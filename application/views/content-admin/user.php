@@ -22,7 +22,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card pad12">
-				<div class="table-responsive">
+				<!-- <div class="table-responsive">
 				  	<table class="table table-striped">
 		  				<caption>
 		  					Showing 1 to 3 of 3
@@ -31,9 +31,9 @@
 							    <li class="page-item disabled">
 							      <a class="page-link" href="#" tabindex="-1">Previous</a>
 							    </li>
-							    <li class="page-item"><a class="page-link" href="#">1</a></li>
-							    <li class="page-item active">
-							      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+							    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+							    <li class="page-item">
+							      <a class="page-link" href="#">2</a>
 							    </li>
 							    <li class="page-item"><a class="page-link" href="#">3</a></li>
 							    <li class="page-item">
@@ -44,10 +44,11 @@
 		  				</caption>
 						<thead>
 							<tr>
-							  <th scope="col">No.</th>
-							  <th scope="col">First</th>
-							  <th scope="col">Last</th>
-							  <th scope="col">Handle</th>
+							  <th scope="col">ID</th>
+							  <th scope="col">Username</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Role</th>
+							  <th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -56,22 +57,14 @@
 							  <td>Mark</td>
 							  <td>Otto</td>
 							  <td>@mdo</td>
-							</tr>
-							<tr>
-							  <th scope="row">2</th>
-							  <td>Jacob</td>
-							  <td>Thornton</td>
-							  <td>@fat</td>
-							</tr>
-							<tr>
-							  <th scope="row">3</th>
-							  <td>Larry</td>
-							  <td>the Bird</td>
-							  <td>@twitter</td>
+							  <td>
+							  	<button class="btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i></button>
+							  	<button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+							  </td>
 							</tr>
 						</tbody>
 						<div class="table-tittle float-left">
-							Tabel Highlight
+							Tabel User
 						</div>
 						<div class="input-group search-table float-right">
 						  <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -80,7 +73,34 @@
 						  </div>
 						</div>
 					</table>
-				</div>
+				</div> -->
+				<table id="table-data" class="table table-striped table-bordered" style="width:100%">
+				    <thead>
+				        <tr>
+				            <th>ID</th>
+				            <th>Username</th>
+				            <th>Name</th>
+				            <th>Action</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+
+				    	<?php
+				    		foreach ($list->result() as $r){
+				    	?>
+				        <tr>
+				            <td><?php echo $r->id ?></td>
+				            <td><?php echo $r->username ?></td>
+				            <td><?php echo $r->name ?></td>
+				            <td>
+							  	<button class="btn btn-sm btn-success"><i class="fa fa-pencil-alt"></i></button>
+							  	<button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+						  	</td>
+				        </tr>
+				        <?php } ?>
+
+				    </tbody>
+				</table>
 			</div>
 		</div>
 	</div>

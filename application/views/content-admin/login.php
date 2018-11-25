@@ -17,21 +17,23 @@
       
       <div class="col-md-4">
         <section class="login-form">
-          <form method="post" action="<?php echo base_url().'admin/login/auth' ?>" role="login">
+          <form method="post" action="<?php echo base_url().'admin/login/auth' ?>">
             <img src="<?php echo base_url() ?>assets/photo/logo.png" class="img-responsive" alt="" />
-            <input type="text" name="username" placeholder="Username" required class="form-control input-lg" />
+            <input type="text" name="username" placeholder="Username" required class="form-control input-lg" autofocus="" value="<?php echo $this->session->flashdata('username') ?>" />
             
-            <input type="password" class="form-control input-lg" name="password" placeholder="Password" required="" />
+            <input type="password" class="form-control input-lg" name="password" placeholder="Password" required="" value="<?php echo $this->session->flashdata('password') ?>" />
             
             
             <div class="pwstrength_viewport_progress login-fail">
-              Username atau Password Salah
+              <?php 
+                echo $this->session->flashdata('error_msg_login');
+              ?>
             </div>
             
             
             <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
             <div>
-              <a href="#">Create account</a> or <a href="#">reset password</a>
+              <a href="#">reset password</a>
             </div>
             
           </form>

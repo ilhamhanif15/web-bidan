@@ -59,9 +59,10 @@ $route['post'] = 'Master_Controller/post';
 
 /*----------------------------------------------ADMIN ROUTES-----------------------------------------------*/
 $route['admin/home'] = 'Admin_Controller/index';
-
+$route['admin/user'] = 'Admin_Controller/user';
 $route['admin/highlight'] = 'highlight_Controller/index';
 /*---------------------------------------------------------------------------------------------------------*/
 
 $route['admin/login'] = 'Login_Controller/index';
 $route['admin/login/auth'] = 'Login_Controller/auth';
+$route['admin/logout'] = 'Login_Controller/logout';

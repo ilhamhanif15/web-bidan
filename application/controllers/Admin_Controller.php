@@ -9,15 +9,12 @@ class Admin_Controller extends CI_Controller {
 		$this->load->view('layout-admin/master',$data);
 	}
 
-	public function postPage()
+	public function user()
 	{
-		$data['page'] = 'post-page';
+		$data['page'] = 'user';
+		$list = $this->model_user->get();
+		$data['list'] = $list;
 		$this->load->view('layout-admin/master',$data);
 	}
-	
-	public function post()
-	{
-		$data['page'] = 'post';
-		$this->load->view('layout-admin/master',$data);
-	}
+
 }
